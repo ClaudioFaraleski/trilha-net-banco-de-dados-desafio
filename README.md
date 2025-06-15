@@ -1,91 +1,144 @@
-# DIO - Trilha .NET - Banco de Dados
-www.dio.me
+# Desafio SQL - Banco de Dados de Filmes 🎬
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de banco de dados, da trilha .NET da DIO.
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-red.svg)](https://www.microsoft.com/sql-server)
+[![DIO](https://img.shields.io/badge/DIO-Curso%20.NET-blue.svg)](https://www.dio.me)
 
-## Contexto
-Você é responsável pelo banco de dados de um site de filmes, onde são armazenados dados sobre os filmes e seus atores. Sendo assim, foi solicitado para que você realize uma consulta no banco de dados com o objetivo de trazer alguns dados para análises.
+## 📑 Sobre o Projeto
 
-## Proposta
-Você precisará realizar 12 consultas ao banco de dados, cada uma retornando um tipo de informação.
-O seu banco de dados está modelado da seguinte maneira:
+Desafio prático do curso .NET da Digital Innovation One (DIO) focado em consultas SQL. O projeto simula um banco de dados de um site de filmes, onde são armazenados dados sobre filmes, atores e gêneros.
+
+## 🎯 Objetivos
+
+Desenvolver 12 consultas SQL diferentes para extrair informações específicas do banco de dados, demonstrando domínio em:
+- Consultas básicas e avançadas
+- Relacionamentos entre tabelas
+- Ordenação e agrupamento de dados
+- Filtros e condições
+
+## 🗃️ Estrutura do Banco de Dados
 
 ![Diagrama banco de dados](Imagens/diagrama.png)
 
-As tabelas sao descritas conforme a seguir:
+### Tabelas Principais
+- **Filmes**: Armazena dados dos filmes
+- **Atores**: Contém informações dos atores
+- **Generos**: Lista os gêneros disponíveis
+- **ElencoFilme**: Relacionamento N:N entre filmes e atores
+- **FilmesGenero**: Relacionamento N:N entre filmes e gêneros
 
-**Filmes**
+## 🚀 Como Executar
 
-Tabela responsável por armazenar informações dos filmes.
+1. Clone este repositório
+2. Abra o SQL Server Management Studio
+3. Execute o script [`Script Filmes.sql`](Script%20Filmes.sql)
+4. Execute as consultas conforme necessário
 
-**Atores**
+## 📊 Consultas e Resultados
 
-Tabela responsável por armazenar informações dos atores.
-
-**Generos**
-
-Tabela responsável por armazenar os gêneros dos filmes.
-
-**ElencoFilme**
-
-Tabela responsável por representar um relacionamento do tipo muitos para muitos entre filmes e atores, ou seja, um ator pode trabalhar em muitos filmes, e filmes
-podem ter muitos atores.
-
-**FilmesGenero**
-
-Tabela responsável por representar um relacionamento do tipo muitos para muitos entre filmes e gêneros, ou seja, um filme pode ter mais de um gênero, e um genêro pode fazer parte de muitos filmes.
-
-## Preparando o banco de dados
-Você deverá executar o arquivo **Script Filmes.sql** em seu banco de dados SQL Server, presente na pasta Scripts deste repositório ([ou clique aqui](Script%20Filmes.sql)). Esse script irá criar um banco chamado **Filmes**, contendo as tabelas e os dados necessários para você realizar este desafio.
-
-## Objetivo
-Você deverá criar diversas consultas, com o objetivo de retornar os dados a seguir. Abaixo de cada pedido tem o retorno esperado. O seu retorno deve ser igual ao da imagem.
+### Resultado
 
 ## 1 - Buscar o nome e ano dos filmes
-
-![Exercicio 1](Imagens/1.png)
+```sql
+SELECT Nome, Ano FROM Filmes
+```
+![Resultado1](Resultado/1.png)
 
 ## 2 - Buscar o nome e ano dos filmes, ordenados por ordem crescente pelo ano
-
-![Exercicio 2](Imagens/2.png)
+```sql
+SELECT Nome, Ano FROM Filmes ORDER BY Ano
+```
+![Resultado2](Resultado/2.png)
 
 ## 3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
-
-![Exercicio 3](Imagens/3.png)
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Nome = 'De Volta para o Futuro'
+```
+![Resultado3](Resultado/3.png)
 
 ## 4 - Buscar os filmes lançados em 1997
-
-![Exercicio 4](Imagens/4.png)
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Ano = 1997
+```
+![Resultado4](Resultado/4.png)
 
 ## 5 - Buscar os filmes lançados APÓS o ano 2000
-
-![Exercicio 5](Imagens/5.png)
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Ano > 2000
+```
+![Resultado5](Resultado/5.png)
 
 ## 6 - Buscar os filmes com a duracao maior que 100 e menor que 150, ordenando pela duracao em ordem crescente
-
-![Exercicio 6](Imagens/6.png)
+```sql
+SELECT Nome, Ano, Duracao FROM Filmes WHERE Duracao > 100 AND Duracao < 150 ORDER BY Duracao
+```
+![Resultado6](Resultado/6.png)
 
 ## 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
-
-![Exercicio 7](Imagens/7.png)
+```sql
+SELECT Ano, COUNT(*) as Quantidade FROM Filmes GROUP BY Ano ORDER BY Ano DESC
+```
+![Resultado7](Resultado/7.png)
 
 ## 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
-
-![Exercicio 8](Imagens/8.png)
+```sql
+SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'M'
+```
+![Resultado8](Resultado/8.png)
 
 ## 9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
-
-![Exercicio 9](Imagens/9.png)
+```sql
+SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'F' ORDER BY PrimeiroNome
+```
+![Resultado9](Resultado/9.png)
 
 ## 10 - Buscar o nome do filme e o gênero
-
-![Exercicio 10](Imagens/10.png)
+```sql
+SELECT f.Nome, g.Nome as Genero 
+FROM Filmes f
+INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
+INNER JOIN Generos g ON fg.IdGenero = g.Id
+```
+![Resultado10](Resultado/10.png)
 
 ## 11 - Buscar o nome do filme e o gênero do tipo "Mistério"
-
-![Exercicio 11](Imagens/11.png)
+```sql
+SELECT f.Nome, g.Nome as Genero 
+FROM Filmes f
+INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
+INNER JOIN Generos g ON fg.IdGenero = g.Id
+WHERE g.Nome = 'Mistério'
+```
+![Resultado11](Resultado/11.png)
 
 ## 12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
+```sql
+SELECT f.Nome, a.PrimeiroNome, a.UltimoNome, ef.Papel
+FROM Filmes f
+INNER JOIN ElencoFilme ef ON f.Id = ef.IdFilme
+INNER JOIN Atores a ON ef.IdAtor = a.Id
+```
+![Resultado12](Resultado/12.png)
 
-![Exercicio 12](Imagens/12.png)
+## 🤝 Contribuindo
+
+Sinta-se à vontade para contribuir com este projeto:
+
+1. Faça um Fork
+2. Crie uma Branch para sua Feature (`git checkout -b feature/NovaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adicionando nova feature'`)
+4. Push para a Branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença Dio.
+
+## 🔗 Links Úteis
+
+- [Digital Innovation One](https://www.dio.me)
+- [Documentação SQL Server](https://docs.microsoft.com/sql)
+- [Curso .NET](https://www.dio.me/curso-net)
+
+---
+⌨️ com ❤️ por [Seu Nome](https://github.com/claudiofaraleski) 😊
