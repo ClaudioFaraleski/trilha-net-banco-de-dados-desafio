@@ -26,13 +26,13 @@ Desenvolver 12 consultas SQL diferentes para extrair informações específicas 
 ```sql
 SELECT Nome, Ano FROM Filmes
 ```
-![Resultado consulta 1](Resultado/1 - Buscar o nome e ano dos filmes.jpg)
+![Resultado consulta 1](Resultado/1.jpg)
 
 ### 2 - Buscar o nome e ano dos filmes, ordenados por ordem crescente pelo ano
 ```sql
 SELECT Nome, Ano FROM Filmes ORDER BY Ano
 ```
-![Resultado consulta 2](Resultado/2.png)
+![Resultado consulta 2](Resultado/2.jpg)
 
 ### 3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
 ```sql
@@ -93,7 +93,7 @@ INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
 INNER JOIN Generos g ON fg.IdGenero = g.Id
 WHERE g.Nome = 'Mistério'
 ```
-![Resultado da consulta 11 - Filmes do gênero Mistério](Resultado/11.png)
+![Resultado da consulta 11 - Filmes do gênero Mistério](Resultado/11.jpg)
 
 ### 12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
 ```sql
@@ -102,7 +102,7 @@ FROM Filmes f
 INNER JOIN ElencoFilme ef ON f.Id = ef.IdFilme
 INNER JOIN Atores a ON ef.IdAtor = a.Id
 ```
-![Resultado da consulta 12 - Filmes e seus atores](Resultado/12.png)
+![Resultado da consulta 12 - Filmes e seus atores](Resultado/12.jpg)
 
 ## 🤝 Contribuindo
 
