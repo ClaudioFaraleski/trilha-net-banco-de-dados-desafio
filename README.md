@@ -38,43 +38,43 @@ SELECT Nome, Ano FROM Filmes ORDER BY Ano
 ```sql
 SELECT Nome, Ano, Duracao FROM Filmes WHERE Nome = 'De Volta para o Futuro'
 ```
-![Resultado da consulta 3 - Filme De Volta para o Futuro](Resultado/3.png)
+![Resultado da consulta 3 - Filme De Volta para o Futuro](Resultado/3.jpg)
 
 ### 4 - Buscar os filmes lançados em 1997
 ```sql
 SELECT Nome, Ano, Duracao FROM Filmes WHERE Ano = 1997
 ```
-![Resultado da consulta 4 - Filmes lançados em 1997](Resultado/4.png)
+![Resultado da consulta 4 - Filmes lançados em 1997](Resultado/4.jpg)
 
 ### 5 - Buscar os filmes lançados APÓS o ano 2000
 ```sql
 SELECT Nome, Ano, Duracao FROM Filmes WHERE Ano > 2000
 ```
-![Resultado da consulta 5 - Filmes lançados após 2000](Resultado/5.png)
+![Resultado da consulta 5 - Filmes lançados após 2000](Resultado/5.jpg)
 
 ### 6 - Buscar os filmes com a duracao maior que 100 e menor que 150, ordenando pela duracao em ordem crescente
 ```sql
 SELECT Nome, Ano, Duracao FROM Filmes WHERE Duracao > 100 AND Duracao < 150 ORDER BY Duracao
 ```
-![Resultado da consulta 6 - Filmes com duração entre 100 e 150](Resultado/6.png)
+![Resultado da consulta 6 - Filmes com duração entre 100 e 150](Resultado/6.jpg)
 
 ### 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
 ```sql
 SELECT Ano, COUNT(*) as Quantidade FROM Filmes GROUP BY Ano ORDER BY Ano DESC
 ```
-![Resultado da consulta 7 - Quantidade de filmes por ano](Resultado/7.png)
+![Resultado da consulta 7 - Quantidade de filmes por ano](Resultado/7.jpg)
 
 ### 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
 ```sql
 SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'M'
 ```
-![Resultado da consulta 8 - Atores do gênero masculino](Resultado/8.png)
+![Resultado da consulta 8 - Atores do gênero masculino](Resultado/8.jpg)
 
 ### 9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
 ```sql
 SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'F' ORDER BY PrimeiroNome
 ```
-![Resultado da consulta 9 - Atores do gênero feminino](Resultado/9.png)
+![Resultado da consulta 9 - Atores do gênero feminino](Resultado/9.jpg)
 
 ### 10 - Buscar o nome do filme e o gênero
 ```sql
@@ -83,7 +83,7 @@ FROM Filmes f
 INNER JOIN FilmesGenero fg ON f.Id = fg.IdFilme
 INNER JOIN Generos g ON fg.IdGenero = g.Id
 ```
-![Resultado da consulta 10 - Nome do filme e gênero](Resultado/10.png)
+![Resultado da consulta 10 - Nome do filme e gênero](Resultado/10.jpg)
 
 ### 11 - Buscar o nome do filme e o gênero do tipo "Mistério"
 ```sql
