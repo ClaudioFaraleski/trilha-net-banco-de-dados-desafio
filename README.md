@@ -1,6 +1,6 @@
 # Desafio SQL - Banco de Dados de Filmes 🎬
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-red.svg)](https://www.microsoft.com/sql-server)
 [![DIO](https://img.shields.io/badge/DIO-Curso%20.NET-blue.svg)](https://www.dio.me)
 
