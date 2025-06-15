@@ -125,4 +125,4 @@ Este projeto está sob a licença Dio.
 - [Curso .NET](https://www.dio.me/curso-net)
 
 ---
-⌨️ com ❤️ por [Seu Nome](https://github.com/claudiofaraleski) 😊
+⌨️ com ❤️ por [Claudio Faraleski Jr.](https://github.com/claudiofaraleski) 😊
